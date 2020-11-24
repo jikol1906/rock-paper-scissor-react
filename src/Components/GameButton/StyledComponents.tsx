@@ -20,6 +20,7 @@ export const OuterRing = styled.button<Props>`
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  transition: all .2s ease-in-out;
   grid-area: ${({ gameButtonType, theme }) =>
       (gameButtonType === GameButtonTypes.Scissor && 'scissor') ||
       (gameButtonType === GameButtonTypes.Rock && 'rock') ||
@@ -29,6 +30,10 @@ export const OuterRing = styled.button<Props>`
       (gameButtonType === GameButtonTypes.Scissor && '#d7900d') ||
       (gameButtonType === GameButtonTypes.Rock && '#a21b33') ||
       (gameButtonType === GameButtonTypes.Paper && '#384fbf')};
+
+  &:hover {
+    transform: translateY(-10px) scale(1.04);
+  }
 `;
 
 export const InnerCircle = styled.div`
