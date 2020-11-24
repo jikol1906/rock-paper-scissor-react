@@ -9,7 +9,7 @@ import {defaultTheme} from './theme';
 
 const StyledContainer = styled.div`
   margin: 0 auto;
-  max-width: 80rem;
+  max-width: 70rem;
 `
 
 
@@ -18,6 +18,7 @@ ReactDOM.render(
     <GlobalStyles/>
     <ThemeProvider theme={defaultTheme}>
       <StyledContainer>
+        <Header/>
         <GameSection/>
       </StyledContainer>
     </ThemeProvider>
