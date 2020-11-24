@@ -1,15 +1,16 @@
 import React from 'react';
 import GameButton from '../../Components/GameButton/GameButton';
 import { GameButtonTypes } from '../../Components/GameButton/Options';
-import { GameButtonGrid, StyledMain } from './StyledComponents';
+import { GameButtonGrid, StyledMain, StyledTriangle } from './StyledComponents';
 
 const GameSection: React.FC = () => {
   return (
     <StyledMain>
       <GameButtonGrid>
-        <GameButton type={GameButtonTypes.Rock} />
-        <GameButton type={GameButtonTypes.Scissor} />
+        <StyledTriangle/>
         <GameButton type={GameButtonTypes.Paper} />
+        <GameButton type={GameButtonTypes.Scissor} />
+        <GameButton type={GameButtonTypes.Rock} />
       </GameButtonGrid>
     </StyledMain>
   );
