@@ -11,7 +11,7 @@ declare module "styled-components" {
 
 
 
-export const darkTheme: DefaultTheme = {
+export const defaultTheme: DefaultTheme = {
 	rockGradient: "linear-gradient(to bottom, hsl(349, 71%, 52%),hsl(349, 70%, 56%))",
   scissorGradient: "linear-gradient(to bottom, hsl(39, 89%, 49%),hsl(40, 84%, 53%))",
   paperGradient: "linear-gradient(to bottom, hsl(230, 89%, 62%), hsl(230, 89%, 65%))"

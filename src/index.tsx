@@ -1,18 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
-import GameButton from './Components/GameButton/GameButton';
-import { GameButtonTypes } from './Components/GameButton/Options';
+import GameSection from './Containers/GameSection/GameSection';
+import GlobalStyles from './GlobalStyles';
 import reportWebVitals from './reportWebVitals';
-import { darkTheme} from './theme';
+import {defaultTheme} from './theme';
+
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={darkTheme}>
-      <GameButton type={GameButtonTypes.Rock}/>
-      <GameButton type={GameButtonTypes.Scissor}/>
-      <GameButton type={GameButtonTypes.Paper}/>
+    <GlobalStyles/>
+    <ThemeProvider theme={defaultTheme}>
+      <GameSection/>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
