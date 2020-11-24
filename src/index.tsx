@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled, { ThemeProvider } from 'styled-components';
 import GameSection from './Containers/GameSection/GameSection';
+import Header from './Containers/Header/Header';
 import GlobalStyles from './GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import {defaultTheme} from './theme';

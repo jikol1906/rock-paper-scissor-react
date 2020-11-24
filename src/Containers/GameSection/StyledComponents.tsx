@@ -9,7 +9,7 @@ export const GameButtonGrid = styled.div`
   --row-gap: calc(2.5rem * var(--scalingfactor));
   grid-column-gap: var(--column-gap);
   grid-row-gap: var(--row-gap);
-  margin: 23rem auto;
+  margin: 0 auto;
   display: grid;
   grid-template-areas:
     'paper scissor'
