@@ -6,7 +6,7 @@ type Props = {
 };
 
 export const OuterRing = styled.button<Props>`
-  --size: 9rem;
+  --size: calc(var(--gamebutton-radius) * 2);
   height: var(--size);
   width: var(--size);
   background: ${({ gameButtonType, theme }) =>
@@ -20,6 +20,10 @@ export const OuterRing = styled.button<Props>`
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  grid-area: ${({ gameButtonType, theme }) =>
+      (gameButtonType === GameButtonTypes.Scissor && 'scissor') ||
+      (gameButtonType === GameButtonTypes.Rock && 'rock') ||
+      (gameButtonType === GameButtonTypes.Paper && 'paper')};
   border-bottom: 6px solid
     ${({ gameButtonType, theme }) =>
       (gameButtonType === GameButtonTypes.Scissor && '#d7900d') ||

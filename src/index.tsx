@@ -1,18 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import GameSection from './Containers/GameSection/GameSection';
 import GlobalStyles from './GlobalStyles';
 import reportWebVitals from './reportWebVitals';
 import {defaultTheme} from './theme';
 
 
+const StyledContainer = styled.div`
+  margin: 0 auto;
+  max-width: 80rem;
+`
+
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles/>
     <ThemeProvider theme={defaultTheme}>
-      <GameSection/>
+      <StyledContainer>
+        <GameSection/>
+      </StyledContainer>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

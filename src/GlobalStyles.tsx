@@ -14,8 +14,9 @@ const GlobalStyles = createGlobalStyle`
     }
 
     html {  
-        height:100vh;
+        font-size:62.5%;
         background:radial-gradient(at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+        background-repeat:no-repeat;
     }
 `;
 
