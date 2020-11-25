@@ -27,7 +27,7 @@ export const OuterRing = styled.button<Props>`
     (gameButtonType === GameButtonTypes.Scissor && 'scissor') ||
     (gameButtonType === GameButtonTypes.Rock && 'rock') ||
     (gameButtonType === GameButtonTypes.Paper && 'paper')};
-  border-bottom: calc(6px * var(--scalingfactor)) solid
+  border-bottom: .6rem solid
     ${({ gameButtonType }) =>
       (gameButtonType === GameButtonTypes.Scissor && '#d7900d') ||
       (gameButtonType === GameButtonTypes.Rock && '#a21b33') ||
@@ -49,9 +49,9 @@ export const InnerCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-top: calc(6px * var(--scalingfactor)) solid rgb(206, 210, 210);
+  border-top: .6rem solid rgb(206, 210, 210);
 `;
 
 export const StyledImg = styled.img`
-  width: calc(5rem * var(--scalingfactor));
+  width: 5rem;
 `;
