@@ -35,6 +35,11 @@ export const OuterRing = styled.button<Props>`
 
   &:hover {
     transform: translateY(-10px) scale(1.04);
+    filter: brightness(110%)
+  }
+
+  &:active {
+    transform: translateY(-4px) scale(1.02);
   }
 
 

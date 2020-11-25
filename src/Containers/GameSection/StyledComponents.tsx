@@ -19,13 +19,24 @@ export const GameButtonGrid = styled.div`
   justify-items: center;
 
   &.transition-exit {
-    transform: translateY(0) scale(1);
+    transform:  scale(1);
     opacity:1;
   }
   &.transition-exit-active {
-    transform:translateY(500px) scale(.6);
+    transform: scale(.6);
     opacity:0;
     transition: opacity 600ms linear,transform 600ms cubic-bezier(0.36, 0, 0.66, -0.56);
+  }
+
+  &.transition-exit-done, &.transition-enter {
+    transform: scale(.6);
+    opacity:0;
+  }
+
+  &.transition-enter-active {
+    transform: translateY(0) scale(1);
+    opacity:1;
+    transition: opacity 600ms linear,transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 `;
 

@@ -9,7 +9,6 @@ import GlobalStyles from './GlobalStyles';
 const StyledContainer = styled.div`
   margin: 0 auto;
   max-width: 70rem;
-  overflow:hidden;
 `;
 
 ReactDOM.render(

@@ -10,7 +10,9 @@ function App() {
   const gameButtonClicked = (type: GameButtonTypes) => {
     console.log('here');
     setButtonClicked(false);
+
   };
+
 
   return (
     <>

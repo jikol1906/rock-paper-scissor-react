@@ -24,6 +24,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: 'Barlow Semi Condensed', sans-serif;
         padding:2rem;
+        padding-top:0;
     }
 
     html {  

@@ -10,13 +10,13 @@ interface Props {
 }
 
 const GameSection: React.FC<Props> = ({buttonClicked, gameButtonClicked}) => {
-  const ref = useRef(null);
+  const gameButtonGridRef = useRef(null);
   
   
   return (
     <StyledMain>
-      <CSSTransition nodeRef={ref} unmountOnExit in={buttonClicked} timeout={600} classNames="transition">
-        <GameButtonGrid ref={ref}>
+      <CSSTransition nodeRef={gameButtonGridRef} in={buttonClicked} timeout={600} classNames="transition">
+        <GameButtonGrid ref={gameButtonGridRef}>
           <StyledTriangle />
           <GameButton
             clicked={() => gameButtonClicked(GameButtonTypes.Paper)}
@@ -32,6 +32,9 @@ const GameSection: React.FC<Props> = ({buttonClicked, gameButtonClicked}) => {
           />
         </GameButtonGrid>
       </CSSTransition>
+
+
+
     </StyledMain>
   );
 };
