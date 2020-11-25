@@ -1,33 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled, { ThemeProvider } from 'styled-components';
+import App from './App';
 import GameSection from './Containers/GameSection/GameSection';
 import Header from './Containers/Header/Header';
 import GlobalStyles from './GlobalStyles';
-import reportWebVitals from './reportWebVitals';
-import {defaultTheme} from './theme';
-
 
 const StyledContainer = styled.div`
   margin: 0 auto;
   max-width: 70rem;
-`
-
+`;
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyles/>
-    <ThemeProvider theme={defaultTheme}>
-      <StyledContainer>
-        <Header/>
-        <GameSection/>
-      </StyledContainer>
-    </ThemeProvider>
+    <GlobalStyles />
+    <StyledContainer>
+      <App/>
+    </StyledContainer>
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+

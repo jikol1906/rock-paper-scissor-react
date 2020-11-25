@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledHeader = styled.header`
     margin: 4.5rem 0;
     padding:2.5rem;
-    border: 2px solid hsl(217, 16%, 45%);
+    border: 2px solid var(--gray-border);
     border-radius:2rem;
     display:flex;
     justify-content:space-between;

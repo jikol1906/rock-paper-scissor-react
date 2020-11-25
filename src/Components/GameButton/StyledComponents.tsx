@@ -11,10 +11,10 @@ export const OuterRing = styled.button<Props>`
   z-index:1;
   height: var(--size);
   width: var(--size);
-  background: ${({ gameButtonType, theme }) =>
-    (gameButtonType === GameButtonTypes.Scissor && theme.scissorGradient) ||
-    (gameButtonType === GameButtonTypes.Rock && theme.rockGradient) ||
-    (gameButtonType === GameButtonTypes.Paper && theme.paperGradient)};
+  background: ${({ gameButtonType }) =>
+    (gameButtonType === GameButtonTypes.Scissor && 'var(--scissor-gradient)') ||
+    (gameButtonType === GameButtonTypes.Rock && 'var(--rock-gradient)') ||
+    (gameButtonType === GameButtonTypes.Paper && 'var(--paper-gradient)')};
   border-radius: 50%;
   outline: none;
   border: none;
@@ -23,12 +23,12 @@ export const OuterRing = styled.button<Props>`
   justify-content: center;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  grid-area: ${({ gameButtonType, theme }) =>
+  grid-area: ${({ gameButtonType }) =>
     (gameButtonType === GameButtonTypes.Scissor && 'scissor') ||
     (gameButtonType === GameButtonTypes.Rock && 'rock') ||
     (gameButtonType === GameButtonTypes.Paper && 'paper')};
   border-bottom: calc(6px * var(--scalingfactor)) solid
-    ${({ gameButtonType, theme }) =>
+    ${({ gameButtonType }) =>
       (gameButtonType === GameButtonTypes.Scissor && '#d7900d') ||
       (gameButtonType === GameButtonTypes.Rock && '#a21b33') ||
       (gameButtonType === GameButtonTypes.Paper && '#384fbf')};

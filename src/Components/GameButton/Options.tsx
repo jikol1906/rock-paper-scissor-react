@@ -1,5 +1,5 @@
-export enum GameButtonTypes {
-    Scissor,
-    Rock,
-    Paper
-}
+    export enum GameButtonTypes {
+        Scissor,
+        Rock,
+        Paper
+    }
