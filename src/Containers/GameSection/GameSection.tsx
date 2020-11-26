@@ -1,40 +1,51 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import GameButton from '../../Components/GameButton/GameButton';
 import { GameButtonTypes } from '../../Components/GameButton/Options';
-import { GameButtonGrid, StyledMain, StyledTriangle } from './StyledComponents';
+import GameButtonGrid from '../../Components/GameButtonGrid/GameButtonGrid';
+import Playervshouse from '../../Components/PlayerVsHouse/PlayerVsHouse';
+import {
+  appearTransitionTime,
+  fadeInAndOut,
+  fadeInAndOutTransitionTime,
+} from '../../ReactTransitionGroupTransitions/fadeInAndOutTransition';
+import {
+  StyledMain,
+} from './StyledComponents';
 
 interface Props {
-  buttonClicked:boolean;
-  gameButtonClicked:(type:GameButtonTypes) => void;
+  gameStarted: boolean;
+  gameButtonClicked: (type: GameButtonTypes) => void;
+  resetGame: () => void;
+  typeSelected?:GameButtonTypes
 }
 
-const GameSection: React.FC<Props> = ({buttonClicked, gameButtonClicked}) => {
-  const gameButtonGridRef = useRef(null);
-  
-  
+const GameSection: React.FC<Props> = ({
+  gameStarted,
+  gameButtonClicked,
+  resetGame,
+  typeSelected
+}) => {
+  const [showPlayerVsHouse, setShowPlayerVsHouse] = useState(false);
+
+
+  // useEffect(() => {
+  //   setShowPlayerVsHouse(false);
+  // }, [gameStarted]);
+
   return (
     <StyledMain>
-      <CSSTransition nodeRef={gameButtonGridRef} in={buttonClicked} timeout={600} classNames="transition">
-        <GameButtonGrid ref={gameButtonGridRef}>
-          <StyledTriangle />
-          <GameButton
-            clicked={() => gameButtonClicked(GameButtonTypes.Paper)}
-            type={GameButtonTypes.Paper}
-          />
-          <GameButton
-            clicked={() => gameButtonClicked(GameButtonTypes.Scissor)}
-            type={GameButtonTypes.Scissor}
-          />
-          <GameButton
-            clicked={() => gameButtonClicked(GameButtonTypes.Rock)}
-            type={GameButtonTypes.Rock}
-          />
-        </GameButtonGrid>
-      </CSSTransition>
+      <GameButtonGrid
+        gameStarted={gameStarted}
+        gameButtonClicked={gameButtonClicked}
+        onExit={() => setShowPlayerVsHouse(true)}
+      />
 
-
-
+      <Playervshouse
+      typeSelected={typeSelected!}
+        onExit={() => console.log('exited')}
+        show={showPlayerVsHouse}
+      />
     </StyledMain>
   );
 };

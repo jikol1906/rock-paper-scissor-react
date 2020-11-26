@@ -5,21 +5,27 @@ import GameSection from './Containers/GameSection/GameSection';
 import Header from './Containers/Header/Header';
 
 function App() {
-  const [buttonClicked, setButtonClicked] = useState(true);
+  const [gameStarted, setGameStarted] = useState(false);
+  const [typeSelected, setTypeSelected] = useState<GameButtonTypes>()
 
   const gameButtonClicked = (type: GameButtonTypes) => {
-    console.log('here');
-    setButtonClicked(false);
-
+    setGameStarted(true);
+    setTypeSelected(type);
   };
+
+  const resetGame = () => {
+    setGameStarted(false);
+  }
 
 
   return (
     <>
       <Header />
       <GameSection
+        typeSelected={typeSelected}
+        resetGame={resetGame}
         gameButtonClicked={gameButtonClicked}
-        buttonClicked={buttonClicked}
+        gameStarted={gameStarted}
       />
     </>
   );

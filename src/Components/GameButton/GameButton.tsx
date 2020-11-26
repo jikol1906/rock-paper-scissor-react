@@ -7,12 +7,12 @@ import { GameButtonTypes } from './Options';
 
 export type Props = {
   type: GameButtonTypes;
-  clicked: () => void;
+  clicked?: () => void ;
 };
 
 const GameButton: React.FC<Props> = ({ type,clicked }) => {
   return (
-    <OuterRing onClick={clicked} gameButtonType={type}>
+    <OuterRing clickable={!!clicked} onClick={clicked} gameButtonType={type}>
       <InnerCircle>
         {(type === GameButtonTypes.Paper && <StyledImg src={paper} alt='paper' />) ||
           (type === GameButtonTypes.Rock && <StyledImg src={rock} alt='rock' />) ||

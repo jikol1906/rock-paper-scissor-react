@@ -19,6 +19,10 @@ const GlobalStyles = createGlobalStyle`
         //Font colors:
         --blue: hsl(229, 64%, 46%);
         --dark-blue: hsl(229, 25%, 31%);
+
+        --gamebutton-radius: 7.5rem;
+        --column-gap: 4rem;
+        --row-gap: 2.5rem;
     }
 
     body {
