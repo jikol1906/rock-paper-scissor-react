@@ -2,7 +2,7 @@ import { keyframes } from 'styled-components';
 
 export const scaleUpAndFadeOut = keyframes`
   from {
-    transform: scale(0);
+    transform: scale(.25);
     opacity:1;
   }
 

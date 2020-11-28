@@ -17,18 +17,22 @@ export const ChosenHandContainer = styled.div`
   button {
     transform: scale(1.2);
   }
+`;
 
+export const ChosenHand = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position: relative;
   &::after {
     content: '';
-    position: absolute;
+    position:absolute;
     display: inline-block;
     height: 14rem;
     width: 14rem;
     border-radius: 50%;
-    left: 50%;
-    bottom: 3rem;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
+
+    background-color: rgba(0, 0, 0, 0.2);
   }
 `;
 
@@ -40,16 +44,22 @@ export const Text = styled.h3`
   color: #fff;
 `;
 
-export const WinningAnimation = styled.div`
-  --animation-time: 5s;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.5);
-  position: absolute;
+export const ExpandingCircleContainer = styled.div`
+  position:absolute;
   height: 60rem;
   width: 60rem;
+`
+
+export const ExpandingCircle = styled.div`
+  --animation-time: 2.5s;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  height:100%;
+  width:100%;
   border-radius: 50%;
-  animation: ${scaleUpAndFadeOut} var(--animation-time) ease-in infinite backwards;
+  animation: ${scaleUpAndFadeOut} var(--animation-time) ease-in infinite
+    backwards;
 
   &:nth-child(2) {
     animation-delay: calc(var(--animation-time) / 5);
