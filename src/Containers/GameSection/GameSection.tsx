@@ -9,25 +9,22 @@ import {
   fadeInAndOut,
   fadeInAndOutTransitionTime,
 } from '../../ReactTransitionGroupTransitions/fadeInAndOutTransition';
-import {
-  StyledMain,
-} from './StyledComponents';
+import { StyledMain } from './StyledComponents';
 
 interface Props {
   gameStarted: boolean;
   gameButtonClicked: (type: GameButtonTypes) => void;
   resetGame: () => void;
-  typeSelected?:GameButtonTypes
+  typeSelected?: GameButtonTypes;
 }
 
 const GameSection: React.FC<Props> = ({
   gameStarted,
   gameButtonClicked,
   resetGame,
-  typeSelected
+  typeSelected,
 }) => {
   const [showPlayerVsHouse, setShowPlayerVsHouse] = useState(false);
-
 
   // useEffect(() => {
   //   setShowPlayerVsHouse(false);
@@ -42,7 +39,7 @@ const GameSection: React.FC<Props> = ({
       />
 
       <Playervshouse
-      typeSelected={typeSelected!}
+        typeSelected={typeSelected!}
         onExit={() => console.log('exited')}
         show={showPlayerVsHouse}
       />

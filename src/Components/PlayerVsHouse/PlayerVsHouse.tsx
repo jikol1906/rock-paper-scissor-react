@@ -11,12 +11,13 @@ import {
   ChosenHandContainer,
   PlayerVsHouseContainer,
   Text,
+  WinningAnimation as ExpandingCircle,
 } from './StyledComponents';
 
 interface Props {
   show: boolean;
   onExit: () => void;
-  typeSelected:GameButtonTypes
+  typeSelected: GameButtonTypes;
 }
 
 const Playervshouse: React.FC<Props> = ({ show, onExit, typeSelected }) => {
@@ -33,14 +34,27 @@ const Playervshouse: React.FC<Props> = ({ show, onExit, typeSelected }) => {
       <PlayerVsHouseContainer ref={playerVsHouseRef}>
         <ChosenHandContainer>
           <Text>You picked</Text>
-          <GameButton type={typeSelected}/>
+          <GameButton type={typeSelected} />
         </ChosenHandContainer>
         <ChosenHandContainer>
+          <WinningAnimation/>
           <Text>The House picked</Text>
         </ChosenHandContainer>
       </PlayerVsHouseContainer>
     </CSSTransition>
   );
 };
+
+function WinningAnimation() {
+  return (
+    <>
+      <ExpandingCircle />
+      <ExpandingCircle />
+      <ExpandingCircle />
+      <ExpandingCircle />
+      <ExpandingCircle />
+    </>
+  );
+}
 
 export default Playervshouse;
