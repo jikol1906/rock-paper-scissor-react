@@ -30,16 +30,20 @@ const GameSection: React.FC<Props> = ({
   gameResult,
 }) => {
   const [showPlayerVsHouse, setShowPlayerVsHouse] = useState(false);
-  const [showGameButtonGrid,setShowGameButtonGrid] = useState(true);
+  const [showGameButtonGrid, setShowGameButtonGrid] = useState(true);
 
   useEffect(() => {
-    setShowPlayerVsHouse(false);
+    if (gameStarted) {
+      setShowGameButtonGrid(false);
+    } else {
+      setShowPlayerVsHouse(false);
+    }
   }, [gameStarted]);
 
   return (
     <StyledMain>
       <GameButtonGrid
-        gameStarted={gameStarted}
+        show={showGameButtonGrid}
         gameButtonClicked={gameButtonClicked}
         onExit={() => setShowPlayerVsHouse(true)}
       />
@@ -48,7 +52,7 @@ const GameSection: React.FC<Props> = ({
         resetGame={resetGame}
         typeSelected={typeSelected!}
         houseSelected={houseSelected!}
-        onExit={() => console.log('exited')}
+        onExit={() => setShowGameButtonGrid(true)}
         show={showPlayerVsHouse}
         gameResult={gameResult!}
       />

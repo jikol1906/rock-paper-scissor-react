@@ -7,20 +7,18 @@ import { GameButtonGridDiv, StyledTriangle } from './StyledComponents';
 
 interface Props {
   gameButtonClicked: (type: GameButtonTypes) => void;
-  gameStarted:boolean;
+  show:boolean;
+
   onExit:() => void;
 }
 
-const GameButtonGrid: React.FC<Props> = ({ gameButtonClicked, gameStarted,onExit }) => {
+const GameButtonGrid: React.FC<Props> = ({ gameButtonClicked,onExit,show }) => {
   const gameButtonGridRef = useRef(null);
   return (
     <CSSTransition
       nodeRef={gameButtonGridRef}
-      in={!gameStarted}
-      timeout={{
-        exit: fadeInAndOutTransitionTime,
-        appear: appearTransitionTime,
-      }}
+      in={show}
+      timeout={fadeInAndOutTransitionTime}
       classNames={fadeInAndOut}
       unmountOnExit
       appear
