@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { GameResult } from '../../App';
 import GameButton from '../../Components/GameButton/GameButton';
 import { GameButtonTypes } from '../../Components/GameButton/Options';
 import GameButtonGrid from '../../Components/GameButtonGrid/GameButtonGrid';
@@ -16,6 +17,8 @@ interface Props {
   gameButtonClicked: (type: GameButtonTypes) => void;
   resetGame: () => void;
   typeSelected?: GameButtonTypes;
+  houseSelected?: GameButtonTypes;
+  gameResult?: GameResult;
 }
 
 const GameSection: React.FC<Props> = ({
@@ -23,12 +26,15 @@ const GameSection: React.FC<Props> = ({
   gameButtonClicked,
   resetGame,
   typeSelected,
+  houseSelected,
+  gameResult,
 }) => {
   const [showPlayerVsHouse, setShowPlayerVsHouse] = useState(false);
+  const [showGameButtonGrid,setShowGameButtonGrid] = useState(true);
 
-  // useEffect(() => {
-  //   setShowPlayerVsHouse(false);
-  // }, [gameStarted]);
+  useEffect(() => {
+    setShowPlayerVsHouse(false);
+  }, [gameStarted]);
 
   return (
     <StyledMain>
@@ -39,9 +45,12 @@ const GameSection: React.FC<Props> = ({
       />
 
       <Playervshouse
+        resetGame={resetGame}
         typeSelected={typeSelected!}
+        houseSelected={houseSelected!}
         onExit={() => console.log('exited')}
         show={showPlayerVsHouse}
+        gameResult={gameResult!}
       />
     </StyledMain>
   );

@@ -2,11 +2,15 @@ import React from 'react'
 import { Scoreboard } from '../../Components/ScoreBoard/Scoreboard'
 import { StyledH1, StyledHeader } from './StyledComponents'
 
-function Header() {
+interface Props {
+    score:number
+}
+
+const Header : React.FC<Props> = ({score}) => {
     return (
         <StyledHeader>
             <StyledH1>Rock <br/> Paper <br/> Scissors </StyledH1>
-            <Scoreboard/>        
+            <Scoreboard score={score}/>        
         </StyledHeader>
     )
 }
