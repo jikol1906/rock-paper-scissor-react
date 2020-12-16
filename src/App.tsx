@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GameButtonTypes } from './Components/GameButton/Options';
 import GameSection from './Containers/GameSection/GameSection';
 import Header from './Containers/Header/Header';
+import { useScore } from './utils/useScore';
 
 export enum GameResult {
   PLAYER_WON,
@@ -30,7 +31,7 @@ function determineGameResult(
 
 function App() {
   const [gameStarted, setGameStarted] = useState(false);
-  const [score, setScore] = useState(0);
+  const {score, setScore} = useScore();
   const [typeSelected, setTypeSelected] = useState<GameButtonTypes>();
   const [houseSelected, setHouseSelected] = useState<GameButtonTypes>();
   const [gameResult, setGameResult] = useState<GameResult>();
@@ -51,6 +52,8 @@ function App() {
   const resetGame = () => {
     setGameStarted(false);
   };
+
+
 
   return (
     <>
