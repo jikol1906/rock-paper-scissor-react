@@ -89,7 +89,10 @@ const Playervshouse: React.FC<Props> = ({
             </ChosenHandContainer>
           </PlayerVsHouseContainer>
           <TryAgainButtonContainerSmallScreens>
-            <h1>test</h1>
+            <ResultText>{resultText}</ResultText>
+            <Button onClick={resetGame} primary={true}>
+              Try Again
+            </Button>
           </TryAgainButtonContainerSmallScreens>
         </>
       </CSSTransition>

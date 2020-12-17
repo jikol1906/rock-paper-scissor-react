@@ -14,6 +14,10 @@ export const GameButtonGridDiv = styled.div`
   justify-content: center;
   justify-items: center;
 
+  @media only screen and (max-width:600px) {
+        margin-top:15rem;
+  }
+
   ${fadeInAndOutTransitions}
 `;
 

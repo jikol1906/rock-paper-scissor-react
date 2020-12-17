@@ -114,11 +114,25 @@ export const TryAgainButtonContainerLargeScreen = styled.div`
 `;
 
 export const TryAgainButtonContainerSmallScreens = styled.div`
+  position:relative;
+  z-index: 100;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin-top:10rem;
+
+  button {
+    padding-left: 4rem;
+    padding-right: 4rem;
+
+  }
+
   @media only screen and (min-width: 600px) {
     display: none;
   }
 
-  
+
 `
 
 export const ResultText = styled.h3`
@@ -128,6 +142,10 @@ export const ResultText = styled.h3`
   font-size: 4rem;
   font-weight: 700;
   color: #fff;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 7rem;
+  }
 `;
 
 export const ExpandingCircle = styled.div`
