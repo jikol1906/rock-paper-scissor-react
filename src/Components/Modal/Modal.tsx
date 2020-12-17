@@ -13,6 +13,14 @@ const StyledDialogContent = styled(DialogContent)`
      flex-direction:column;
      align-items:center;
      padding:4.5rem;
+
+     @media only screen and (max-width:600px) {
+        width:100vw;
+        height:100vh;
+        margin:0;
+        border-radius:0;
+  }
+
 `;
 
 const StyledDialogOverlay = styled(DialogOverlay)`
@@ -33,6 +41,16 @@ const StyledModalHeader = styled.header`
   justify-content:space-between;
   align-self:stretch;
 `
+
+const StyledRulesImg = styled.img`
+  width:90%;
+
+  @media only screen and (max-width:600px) {
+
+    margin-top:15rem;
+  }
+`
+
 
 const CloseButton = styled.button`
 
@@ -81,7 +99,7 @@ const Modal: React.FC<Props> = ({ children,open,onCloseModal }) => {
             <StyledH2 id="heading">Rules</StyledH2>
             <CloseButton onClick={onCloseModal}></CloseButton>
           </StyledModalHeader>
-          <img style={{width:'90%'}} src={Rules} alt="game rules"/>
+          <StyledRulesImg src={Rules} alt="game rules"/>
         </StyledDialogContent>
       </StyledDialogOverlay>
       
