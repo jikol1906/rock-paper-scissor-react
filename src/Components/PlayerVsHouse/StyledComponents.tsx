@@ -1,6 +1,9 @@
 import styled, { css } from 'styled-components';
 import { moveX, moveY, scaleUpAndFadeOut } from '../../keyframes/keyframes';
 import { fadeInAndOutTransitions } from '../../ReactTransitionGroupTransitions/fadeInAndOutTransition';
+import GameButton from '../GameButton/GameButton';
+
+export const ExpandedGameButton = styled(GameButton)``;
 
 export const ChosenHandContainer = styled.div`
   text-align: center;
@@ -13,6 +16,14 @@ export const ChosenHandContainer = styled.div`
 
     button {
       transform: scale(1.5);
+
+      @media only screen and (max-width: 900px) {
+        transform: scale(1.2);
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      animation: none;
     }
   }
 
@@ -24,13 +35,25 @@ export const ChosenHandContainer = styled.div`
       animation: ${moveX(true, 100, 0, ['scale(1.5)'], ['scale(1.5)'], true)} 1s
         3s ease-in-out both;
     }
+
+    @media only screen and (max-width: 900px) {
+      & button {
+        transition: none;
+        animation: ${moveX(true, 100, 0, ['scale(1.2)'], ['scale(1.2)'], true)}
+          1s 3s ease-in-out both;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      animation: none;
+    }
   }
 `;
 
 export const PlayerVsHouseContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
 
   ${fadeInAndOutTransitions}
 `;
@@ -65,22 +88,43 @@ export const ExpandingCircleContainer = styled.div`
   position: absolute;
   height: 60rem;
   width: 60rem;
+
+  @media only screen and (max-width: 900px) {
+    height: 40rem;
+    width: 40rem;
+  }
 `;
 
-export const TryAgainButtonContainer = styled.div`
-  position:absolute;
-  z-index:100;
+const tryAgainButtonContainerBaseStyles = css`
   padding: 3rem 5rem;
   display: flex;
   flex-direction: column;
-  text-align:center;
-  animation: ${moveY(true, 100, 0,[],[],true)} 1s 5s ease-in-out backwards;
+  text-align: center;
 `;
 
+export const TryAgainButtonContainerLargeScreen = styled.div`
+  ${tryAgainButtonContainerBaseStyles}
+  position: absolute;
+  z-index: 100;
+  animation: ${moveY(true, 100, 0, [], [], true)} 1s 5s ease-in-out backwards;
+
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const TryAgainButtonContainerSmallScreens = styled.div`
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+
+  
+`
+
 export const ResultText = styled.h3`
-  white-space:nowrap;
-  margin-bottom:1rem;
-  text-transform:uppercase;
+  white-space: nowrap;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
   font-size: 4rem;
   font-weight: 700;
   color: #fff;

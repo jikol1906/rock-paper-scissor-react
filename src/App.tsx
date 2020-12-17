@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { GameButtonTypes } from './Components/GameButton/Options';
+import Footer from './Containers/Footer/Footer';
 import GameSection from './Containers/GameSection/GameSection';
 import Header from './Containers/Header/Header';
 import { useScore } from './utils/useScore';
@@ -59,7 +60,6 @@ function App() {
     <>
       <Header score={score} />
       <GameSection
-        
         typeSelected={typeSelected}
         resetGame={resetGame}
         gameButtonClicked={gameButtonClicked}
@@ -67,6 +67,7 @@ function App() {
         houseSelected={houseSelected}
         gameResult={gameResult}
       />
+      <Footer/>
     </>
   );
 }

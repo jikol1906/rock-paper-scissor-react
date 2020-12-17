@@ -6,7 +6,7 @@ import GameSection from './Containers/GameSection/GameSection';
 import Header from './Containers/Header/Header';
 import GlobalStyles from './GlobalStyles';
 
-const StyledContainer = styled.div`
+export const StyledContainer = styled.div`
   margin: 0 auto;
   max-width: 70rem;
 `;
@@ -14,9 +14,10 @@ const StyledContainer = styled.div`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyles />
-    <StyledContainer>
+    
       <App/>
-    </StyledContainer>
+    
+
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -8,6 +8,8 @@ export const StyledHeader = styled.header`
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+
 `;
 
 export const StyledH1 = styled.h1`
@@ -15,4 +17,8 @@ export const StyledH1 = styled.h1`
   color: white;
   line-height: 0.8;
   text-transform: uppercase;
+
+  @media only screen and (max-width:400px) {
+    font-size: 3rem;
+    }
 `;

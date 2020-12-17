@@ -1,14 +1,19 @@
-import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Button = styled.button<{ primary: boolean }>`
-  ${({ primary }) => primary && 'background-color: #fff'};
-  ${({ primary }) => !primary && 'border: 2px solid var(--gray-border)'};
-  padding: 1.25rem 2rem;
   border: none;
+  background-color: ${({ primary }) => (primary ? '#fff' : 'transparent')};
+  ${({ primary }) => !primary && css`
+    border: 2px solid var(--gray-border);
+    color:white;
+  `};
+
+  padding: 1.25rem 2rem;
+
   cursor: pointer;
   font-family: inherit;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
+  outline: none;
 `;
