@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 
-function getScore() {
+function getPersistedScore() {
     const score = localStorage.getItem('score');
     return score ? parseInt(score) : 0
     
@@ -9,9 +9,9 @@ function getScore() {
 
 
 export const useScore = () => {
-  const [score, setScore] = useState<number>(getScore);
+  const [score, setScore] = useState<number>(getPersistedScore);
 
-  //Save score in localhost
+  //Save score in localStorage
   useEffect(() => {
     localStorage.setItem('score', score.toString());
   }, [score]);
